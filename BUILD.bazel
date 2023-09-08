@@ -1,0 +1,17 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "boost.yap",
+    hdrs = glob([
+        "include/**/*.hpp",
+        "include/**/*.h",
+    ]),
+    includes = ["include"],
+    deps = [
+        "@boost.hana",
+        "@boost.preprocessor",
+        "@boost.type_index",
+    ],
+)
